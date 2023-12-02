@@ -1,0 +1,27 @@
+version: "3.1"
+services:
+  postgres:
+    image: postgres:14.1
+    environment:
+      POSTGRES_USER: textCorrector
+      POSTGRES_PASSWORD: textCorrector404
+      POSTGRES_DB: textCorrector-db
+    ports:
+      - "5432:5432"
+
+  pgadmin:
+    image: dpage/pgadmin4:6
+    environment:
+      PGADMIN_DEFAULT_EMAIL: textCorrector@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: 2k23_admin
+    ports:
+      - "98:80"
+
+  # server-ts:
+  #   build:
+  #     context: ./server-ts
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 9000:9000
+  #   volumes:
+  #     - .:/usr/src/app
