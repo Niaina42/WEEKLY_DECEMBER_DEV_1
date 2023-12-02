@@ -1,4 +1,5 @@
 import React from "react";
+import EditableContent from "./EditableContent/EditableContent";
 
 const Hero = () => {
   return (
@@ -11,24 +12,21 @@ const Hero = () => {
             <h2>Une écriture simple, optimisée, améliorée.</h2>
             <p>
               Utilisé par des millions d’utilisateurs, le correcteur
-              d’orthographe et de grammaire multilingue CorrectorPro corrige et
+              d’orthographe multilingue CorrectorPro corrige et
               reformule vos phrases en temps réel.
             </p>
           </div>
           <div class="col-lg-7">
-            <form action="#" class="sign-up-form d-flex">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Enter email address"
-              />
-              <input type="submit" class="btn btn-primary" value="Sign up" />
-            </form>
+            <div className="content-editable-box">
+              <EditableContent />
+              <button class="btn-correct mt-3">
+                Valider
+                {" "}<i class="bi bi-check"></i>
+              </button>
+            </div>
           </div>
           <div class="col-lg-5">
-            <div className="error-box">
-              Erreur
-            </div>
+            <div className="error-box">Erreur</div>
           </div>
         </div>
       </div>

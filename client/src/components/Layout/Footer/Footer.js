@@ -93,7 +93,7 @@ const Footer = () => {
           <span>All Rights Reserved</span>
         </p>
         <div class="credits">
-          Developed by <a href="https://www.linkedin.com/in/razafindrazaka-niaina-christopher" className="by">Christopher</a>
+          Developed by <a target="_blank" href="https://www.linkedin.com/in/razafindrazaka-niaina-christopher" className="by">Christopher</a>
         </div>
       </div>
     </footer>
