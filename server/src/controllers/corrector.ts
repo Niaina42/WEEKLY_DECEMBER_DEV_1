@@ -42,6 +42,7 @@ const getLevenshteinWord = (word: string, qWords: any): Array<levenshteinResult>
 
 const geTextCorrection =  async (text: string, lang: string) => {
     let textArray = text.split(" ")
+    // if we want to map all word
     // let qWords = await model.getAll(lang)
     let corrections: Array<correctionResult>  = []
 

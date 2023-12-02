@@ -1,11 +1,11 @@
 const jwt = require("jsonwebtoken");
-const SECRET = "iLoveYou";
+const SECRET = "correctorPro";
 
-const generateToken = (u_id : number | undefined, u_email : string | undefined) => {
+const generateToken = (id : number | undefined, email : string | undefined) => {
     const token = jwt.sign(
         {
-            u_id,
-            u_email,
+            id,
+            email,
         },
         SECRET,
         { 

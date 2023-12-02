@@ -5,10 +5,10 @@ const jwt = require('jsonwebtoken');
 const isValid = (req:Request, res:Response, next:any) => {
     try {
       const token = req.headers.authorization?.split('my_key ')[1];
-      const decodedToken = jwt.verify(token, 'iLoveYou');
-      const u_id = parseInt(decodedToken.u_id);
+      const decodedToken = jwt.verify(token, 'correctorPro');
+      const id = parseInt(decodedToken.id);
       
-      if (!u_id) {
+      if (!id) {
         res.status(403).json('Invalid user');
       } else {
         next();

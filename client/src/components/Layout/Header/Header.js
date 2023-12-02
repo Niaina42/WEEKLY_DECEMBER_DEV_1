@@ -19,7 +19,7 @@ const Header = () => {
     <header id="header" class="header fixed-top d-flex align-items-center">
       <div class="container-fluid d-flex align-items-center justify-content-between">
         <a
-          href="index.html"
+          href="#corrector"
           class="logo d-flex align-items-center me-auto me-xl-0"
         >
           <h1>CorrectorPro</h1>
