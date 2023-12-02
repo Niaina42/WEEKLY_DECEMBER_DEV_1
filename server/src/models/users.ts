@@ -6,36 +6,36 @@ const model = {
         let result = await prisma.users.findMany()
         return result
     },
-    getOne: async (u_id : number) => {
+    getOne: async (id : number) => {
         let result = await prisma.users.findUnique({
-            where: { u_id: Number(u_id) },
+            where: { id: Number(id) },
         })
         
         return result 
     },
-    getByEmail: async (u_email : string) => {
+    getByEmail: async (email : string) => {
         let result = await prisma.users.findUnique({
-            where: { u_email: String(u_email) },
+            where: { email: String(email) },
         })
 
         return result
     },
-    search: async (query : string, u_id:number) => {
+    search: async (query : string, id:number) => {
 
         let result = await prisma.users.findMany({
             where: {
                 NOT: {
-                    u_id: u_id,
+                    id: id,
                 },
                 OR: [
                     {
-                        u_email: { contains: query }
+                        email: { contains: query }
                     },
                     {
-                        u_name: { contains: query }
+                        name: { contains: query }
                     },
                     {
-                        u_last_name: { contains: query }
+                        last_name: { contains: query }
                     }
                 ]
             }
@@ -43,36 +43,36 @@ const model = {
 
         return result
     },
-    create: async (u_name:string, u_last_name:string, u_email:string, u_password:string) => {
+    create: async (name:string, last_name:string, email:string, password:string) => {
 
         const result = await prisma.users.create({
             data: {
-                u_name,
-                u_last_name,
-                u_email, 
-                u_password
+                name,
+                last_name,
+                email, 
+                password
               },
         })
 
         return result
     },
-    update:  async (u_name:string, u_last_name:string, u_email:string, u_id:number) => {
+    update:  async (name:string, last_name:string, email:string, id:number) => {
 
         const result = await prisma.users.update({
-            where: { u_id: Number(u_id) },
+            where: { id: Number(id) },
             data: {
-                u_name,
-                u_last_name,
-                u_email, 
+                name,
+                last_name,
+                email, 
             },
         })
 
         return result
     },
-    delete: async (u_id : number) => {
+    delete: async (id : number) => {
 
         let result = await prisma.users.delete({
-            where: { u_id: Number(u_id) },
+            where: { id: Number(id) },
         })
 
         return result

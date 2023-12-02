@@ -7,11 +7,32 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model users {
-  u_id      Int      @id @default(autoincrement())
-  u_createdAt DateTime @default(now())
-  u_name     String   @db.VarChar(255)
-  u_last_name  String?   @db.VarChar(255)
-  u_email String @unique
-  u_password String? 
+model Users {
+  id          Int         @id @default(autoincrement())
+  createdAt   DateTime    @default(now())
+  name        String      @db.VarChar(255)
+  last_name   String?     @db.VarChar(255)
+  email       String      @unique
+  password    String? 
+}
+
+model FrenchWords {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  word          String   @db.VarChar(255) @unique
+  length        Int? 
+}
+
+model EnglishWords {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  word          String   @db.VarChar(255) @unique
+  length        Int? 
+}
+
+model MalagasyWords {
+  id            Int      @id @default(autoincrement())
+  createdAt     DateTime @default(now())
+  word          String   @db.VarChar(255) @unique
+  length        Int? 
 }

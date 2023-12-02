@@ -2,6 +2,7 @@ import { Response, Request } from "express"
 import express from "express"
 import cors from "cors"
 import userRoute from './routes/users'
+import correctorRoute from './routes/corrector'
 
 const app = express()
 
@@ -10,9 +11,10 @@ app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 
 app.get('/',(req:Request, res:Response) => {
-  res.send('Hello from My-Project API')
+  res.send('Hello from CorrectorPro API')
 })
 
-app.use('/my-app/api/users', userRoute)
+app.use('/api/users', userRoute)
+app.use('/api/corrector', correctorRoute)
 
-app.listen(9001, () => console.log("Api listen on port 9001"))
+app.listen(9002, () => console.log("Api listen on port 9002"))
