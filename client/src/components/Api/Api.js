@@ -8,8 +8,8 @@ const Api = () => {
         <h2>Utilisé l'API ?</h2>
         <p>
           Voici les instructions détaillées pour utiliser l'API avec facilité.
-          Suivez ces étapes claires pour intégrer les
-          fonctionnalités dans votre application.
+          Suivez ces étapes claires pour intégrer les fonctionnalités dans votre
+          application.
         </p>
       </div>
 
@@ -33,12 +33,19 @@ const Api = () => {
           </div>
           <div class="col-lg-7 order-1 order-lg-2 d-flex align-items-center">
             <div className="request-area">
-              CURL: https://www.correctorpro.netlify.app/api/corrector
+              Endpoint{"  "}:{"  "} http:/173.249.22.169:9002/api/corrector
               <br />
-              Body data:{" "}
-              {`{
-                  "text": "votre texte ici",
-                  "lang": "la langue choisi (fr/en/mg)"
+              Body{"  "}: {"  "}
+              {`{`}
+              <br />
+              {`
+                    "text": "votre texte ici",
+                  `}
+              <br />
+              {`
+                    "lang": "la langue choisi (fr/en/mg)" `}
+              <br />
+              {`
                }`}
             </div>
           </div>

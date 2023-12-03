@@ -41,15 +41,38 @@ const english = async () => {
       update: {},
       create: data,
     })
-    console.log(`French dictionary creation...`)
+    console.log(`English dictionary creation...`)
   }
-  console.log("French dictionary created")
+  console.log("English dictionary created")
+}
+
+const malagasy = async () => {
+  // Malagasy Dictionary Data
+  let french = fs.readFileSync(path.resolve(__dirname, 'liste_malagasy.txt'), 'utf8')
+  let frenchDictionary = french.split("\n")
+
+  for await (let word of frenchDictionary) {
+    let data = {
+      word,
+      length: word.length
+    }
+    if(word.length) {
+      let res = await prisma.malagasyWords.upsert({
+        where: { word: word },
+        update: {},
+        create: data,
+      })
+      console.log(`Malagasy dictionary creation...`)
+    }
+  }
+  console.log("Malagasy dictionary created")
 }
 
 async function main() {
   console.log(`==> Creation of all dictionary, please wait for a minute.`)
-  // await french()
+  await french()
   await english()
+  await malagasy()
 }
 
 main()

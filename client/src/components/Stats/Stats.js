@@ -27,7 +27,7 @@ const Stats = () => {
                 data-purecounter-end="521"
                 data-purecounter-duration="1"
                 class="purecounter"
-              >2104</span>
+              >21074</span>
               <p>mots Français</p>
             </div>
           </div>
@@ -39,7 +39,7 @@ const Stats = () => {
                 data-purecounter-end="1453"
                 data-purecounter-duration="1"
                 class="purecounter"
-              >209785</span>
+              >64168</span>
               <p>mots Anglais</p>
             </div>
           </div>
@@ -51,7 +51,7 @@ const Stats = () => {
                 data-purecounter-end="32"
                 data-purecounter-duration="1"
                 class="purecounter"
-              >115</span>
+              >1702</span>
               <p>mots Malagasy</p>
             </div>
           </div>

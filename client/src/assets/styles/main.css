@@ -1269,7 +1269,6 @@ body {
   font-size: 50px;
  }
  .lang-select {
-  margin-bottom: 10px;
   background-color: #f1f3f9;
   border-style: none;
   padding: 8px;
@@ -1292,3 +1291,19 @@ body {
   border-bottom: 2px solid red;
   display: inline;
  }
+
+ .editor-toolbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+ }
+
+ .btn-copy {  
+  padding: 0 8px;
+  border-radius: 7px;
+  border-style: none;
+  font-size: 14px;
+ }
+.loading-message {
+  font-size: 12px;
+}

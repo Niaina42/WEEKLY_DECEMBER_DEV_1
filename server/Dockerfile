@@ -9,12 +9,14 @@ COPY package*.json ./
 
 # Install the app dependencies
 RUN npm install
+RUN npm run migrate
+RUN npm run generate
 
 # Copy the rest of the application code to the container
 COPY . .
 
 # Expose a port
-EXPOSE 9000
+EXPOSE 9002
 
 # Start the Node.js application
 CMD ["npx", "ts-node", "src/main.ts"]

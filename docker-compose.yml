@@ -17,11 +17,11 @@ services:
     ports:
       - "98:80"
 
-  # server-ts:
+  # server:
   #   build:
-  #     context: ./server-ts
+  #     context: ./server
   #     dockerfile: Dockerfile
   #   ports:
-  #     - 9000:9000
+  #     - 9002:9002
   #   volumes:
   #     - .:/usr/src/app
