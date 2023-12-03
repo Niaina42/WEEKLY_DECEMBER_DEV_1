@@ -1,23 +1,48 @@
 import React, { useEffect } from "react";
-import EditableContent from "./EditableContent/EditableContent";
 import https from "../../services/http/https";
 import ErrorItems from "./ErrorItems/ErrorItems";
+import Editable from "./Editable/Editable";
 
 const Hero = () => {
   const [content, setContent] = React.useState("");
   const [lang, setLang] = React.useState("fr");
   const [corrections, setCorrections] = React.useState({});
 
+  const checkIncorrectWord = () => {
+    const htmlString = content;
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlString;
+    const textOnly = tempDiv.textContent || tempDiv.innerText || "";
+
+    if(corrections.incorrect_words && corrections.incorrect_words.length) {
+      const words = textOnly.split(' ');
+
+      const spanWrappedWords = words.map(function(word) {
+        return `<span class="${corrections.incorrect_words.includes(word) ? "error":""}">` + word + `</span>`;
+      });
+
+      setContent(spanWrappedWords.join(' '))
+    }
+    else {
+      setContent(textOnly)
+    }
+  }
+
   const checkCorrection = async () => {
+    const htmlString = content;
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = htmlString;
+    const textOnly = tempDiv.textContent || tempDiv.innerText || "";
     try {
       if (content.trim() != "") {
         let response = await https.post("/corrector", {
-          text: content,
+          text: textOnly,
           lang,
         });
         if (response) {
-          console.log(response.data);
+          console.log()
           setCorrections(response.data);
+         
         }
       }
     } catch (error) {
@@ -25,9 +50,23 @@ const Hero = () => {
     }
   };
 
+  
   useEffect(() => {
-    checkCorrection();
-  }, [content]);
+    checkIncorrectWord()
+  }, [corrections])
+
+  useEffect(() => {
+    checkCorrection()
+  }, [content])
+
+  const changeWord = (wrongWord, trueWord) => {
+    const correctedText = content.replace(wrongWord, trueWord);
+    setContent(correctedText);
+  };
+
+  const correctAll = () => {
+
+  }
 
   return (
     <section id="corrector" class="hero">
@@ -48,7 +87,7 @@ const Hero = () => {
                 <option value="en">Anglais</option>
                 <option value="mg">Malagasy</option>
               </select>
-              <EditableContent content={content} setContent={setContent} />
+              <Editable content={content} setContent={setContent} setCorrections={setCorrections} checkCorrection={checkCorrection} />
               <button class="btn-correct mt-3">
                 Corrigé tout <i class="bi bi-check"></i>
               </button>
@@ -72,7 +111,7 @@ const Hero = () => {
               {corrections &&
                 corrections.corrections &&
                 corrections.corrections.map((correct, idx) => (
-                  <ErrorItems correction={correct} key={idx} />
+                  <ErrorItems correction={correct} key={idx} changeWord={changeWord} />
                 ))}
             </div>
           </div>

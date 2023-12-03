@@ -25,9 +25,31 @@ const french = async () => {
   console.log("French dictionary created")
 }
 
+const english = async () => {
+  // Anglais Dictionary Data
+  let french = fs.readFileSync(path.resolve(__dirname, 'liste_anglais.txt'), 'utf8')
+  let frenchDictionary = french.split("\n")
+
+  for await (let word of frenchDictionary) {
+    let data = {
+      word,
+      length: word.length
+    }
+
+    let res = await prisma.englishWords.upsert({
+      where: { word: word },
+      update: {},
+      create: data,
+    })
+    console.log(`French dictionary creation...`)
+  }
+  console.log("French dictionary created")
+}
+
 async function main() {
   console.log(`==> Creation of all dictionary, please wait for a minute.`)
-  await french()
+  // await french()
+  await english()
 }
 
 main()

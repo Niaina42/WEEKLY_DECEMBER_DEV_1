@@ -1287,3 +1287,8 @@ body {
   border-radius: 5px;
   height: 180px;
  }
+
+ .content-editable .error {
+  border-bottom: 2px solid red;
+  display: inline;
+ }

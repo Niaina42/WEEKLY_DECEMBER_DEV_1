@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 
-const ErrorItems = ({ correction }) => {
+const ErrorItems = ({ correction, changeWord }) => {
   const [open, setOpen] = useState(false);
-  const changeWord = (word) => {
-    console.log(word);
-  };
-  return (
+
+  return correction.correction.length ? (
     <div className="error-items" onClick={() => setOpen(!open)}>
       {correction && correction.correction && (
         <span className="error-number">{correction.correction.length}</span>
-      )}
-      {" "} {correction.word}
+      )}{" "}
+      {correction.word}
       <hr style={{ display: open ? "inherit" : "none" }} />
       <div
         className="word-error-list"
@@ -20,7 +18,7 @@ const ErrorItems = ({ correction }) => {
           correction.correction &&
           correction.correction.map((correct, idx) => (
             <span
-              onClick={() => changeWord(correct.word)}
+              onClick={() => changeWord(correction.word, correct.word)}
               className="error-related"
               key={idx}
             >
@@ -29,6 +27,6 @@ const ErrorItems = ({ correction }) => {
           ))}
       </div>
     </div>
-  );
+  ) : null;
 };
 export default ErrorItems;

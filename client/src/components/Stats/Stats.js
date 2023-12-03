@@ -39,7 +39,7 @@ const Stats = () => {
                 data-purecounter-end="1453"
                 data-purecounter-duration="1"
                 class="purecounter"
-              >2402</span>
+              >209785</span>
               <p>mots Anglais</p>
             </div>
           </div>
