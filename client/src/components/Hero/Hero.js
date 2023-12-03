@@ -42,7 +42,7 @@ const Hero = () => {
     const textOnly = tempDiv.textContent || tempDiv.innerText || "";
     try {
       if (content.trim() != "") {
-        setSendCorrection(true)
+        setSendCorrection(true);
         let response = await https.post("/corrector", {
           text: textOnly,
           lang,
@@ -66,7 +66,7 @@ const Hero = () => {
   }, [content]);
 
   const changeWord = (wrongWord, trueWord) => {
-    const correctedText = content.replace(wrongWord, trueWord);
+    const correctedText = content.toLocaleLowerCase().replace(wrongWord, trueWord);
     setContent(correctedText);
   };
 
@@ -75,26 +75,36 @@ const Hero = () => {
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = htmlString;
     const textOnly = tempDiv.textContent || tempDiv.innerText || "";
-    navigator.clipboard.writeText(textOnly);
-    setIsCopied(true);
-    setTimeout(() => {
-      setIsCopied(false);
-    }, 1000);
+
+    const textarea = document.createElement("textarea");
+    textarea.value = textOnly;
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      document.execCommand("copy");
+      setIsCopied(true);
+      setTimeout(() => {
+        setIsCopied(false);
+      }, 1000);
+    } catch (err) {
+      console.error("Unable to copy text", err);
+    }
+    document.body.removeChild(textarea);
   };
 
   const correctAll = () => {
-    if(corrections && corrections.incorrect_words.length) {
+    if (corrections && corrections.incorrect_words.length) {
       const htmlString = content;
       const tempDiv = document.createElement("div");
       tempDiv.innerHTML = htmlString;
       let textOnly = tempDiv.textContent || tempDiv.innerText || "";
 
       corrections.corrections.map((correct) => {
-        if(correct.correction[0])
-          textOnly = textOnly.replace(correct.word, correct.correction[0].word)
-      })
+        if (correct.correction[0])
+          textOnly = textOnly.replace(correct.word, correct.correction[0].word);
+      });
 
-      setContent(textOnly)
+      setContent(textOnly);
     }
   };
 
@@ -122,7 +132,7 @@ const Hero = () => {
                   <option value="mg">Malagasy</option>
                 </select>
                 <button class="btn-copy" onClick={copyToClipboard}>
-                  Copier {isCopied && (<i class="bi bi-check"></i>)}
+                  Copier {isCopied && <i class="bi bi-check"></i>}
                 </button>
               </div>
               <Editable
