@@ -10,9 +10,8 @@ const Footer = () => {
               <span>CorrectorPro</span>
             </a>
             <p>
-              Cras fermentum odio eu feugiat lide par naso tierra. Justo eget
-              nada terra videa magna derita valies darta donna mare fermentum
-              iaculis eu non diam phasellus.
+              L'assurance d'une écriture irréprochable, où que vous alliez.
+              Élevez vos mots avec précision et confiance!
             </p>
             <div class="social-links d-flex mt-4">
               <a href="">
@@ -31,49 +30,49 @@ const Footer = () => {
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Liens utiles</h4>
             <ul>
               <li>
-                <a href="#">Home</a>
+                <a href="#corrector">Correcteur</a>
               </li>
               <li>
-                <a href="#">About us</a>
+                <a href="#about">À propos</a>
               </li>
               <li>
-                <a href="#">Services</a>
+                <a href="#stats">Statistiques</a>
               </li>
               <li>
-                <a href="#">Terms of service</a>
+                <a href="#api">API</a>
               </li>
               <li>
-                <a href="#">Privacy policy</a>
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </div>
 
           <div class="col-lg-2 col-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Notre Services</h4>
             <ul>
               <li>
-                <a href="#">Web Design</a>
+                <a href="#">Correcteur orthographique</a>
               </li>
               <li>
-                <a href="#">Web Development</a>
+                <a href="#">API integrée</a>
               </li>
               <li>
-                <a href="#">Product Management</a>
+                <a href="#">Dictionaire de mot</a>
               </li>
               <li>
-                <a href="#">Marketing</a>
+                <a href="#">IA modeling</a>
               </li>
               <li>
-                <a href="#">Graphic Design</a>
+                <a href="#">Word nlp</a>
               </li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-            <h4>Contact Us</h4>
+            <h4>Contactez-nous</h4>
             <p>A108 Adam Street</p>
             <p>New York, NY 535022</p>
             <p>United States</p>
@@ -81,7 +80,7 @@ const Footer = () => {
               <strong>Phone:</strong> <span>+1 5589 55488 55</span>
             </p>
             <p>
-              <strong>Email:</strong> <span>info@example.com</span>
+              <strong>Email:</strong> <span>support@correctorpro.com</span>
             </p>
           </div>
         </div>
@@ -89,11 +88,19 @@ const Footer = () => {
 
       <div class="container copyright text-center mt-4">
         <p>
-          &copy; <span>Copyright</span> <strong class="px-1">CorrectorPro</strong>{" "}
+          &copy; <span>Copyright</span>{" "}
+          <strong class="px-1">CorrectorPro</strong>{" "}
           <span>All Rights Reserved</span>
         </p>
         <div class="credits">
-          Developed by <a target="_blank" href="https://www.linkedin.com/in/razafindrazaka-niaina-christopher" className="by">Christopher</a>
+          Developed by{" "}
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/razafindrazaka-niaina-christopher"
+            className="by"
+          >
+            Christopher
+          </a>
         </div>
       </div>
     </footer>

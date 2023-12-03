@@ -37,7 +37,7 @@ const Header = () => {
               <a href="#about">À propos</a>
             </li>
             <li>
-              <a href="#documentation">Docummentation</a>
+              <a href="#stats">Statistiques</a>
             </li>
             <li>
               <a href="#api">API</a>
@@ -50,7 +50,7 @@ const Header = () => {
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="btn-getstarted" href="#documentation">
+        <a class="btn-getstarted" href="#api">
           Get Started
         </a>
       </div>

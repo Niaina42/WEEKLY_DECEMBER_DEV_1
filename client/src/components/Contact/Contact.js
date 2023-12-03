@@ -6,8 +6,9 @@ const Contact = () => {
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>
-          Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-          consectetur velit
+          Nous sommes à votre écoute ! Contactez-nous pour signaler des bugs ou
+          poser des questions, notre équipe dévouée est là pour vous assister à
+          tout moment.
         </p>
       </div>
 
@@ -18,7 +19,7 @@ const Contact = () => {
               <div class="col-md-6">
                 <div class="info-item" data-aos="fade" data-aos-delay="200">
                   <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
+                  <h3>Adresse</h3>
                   <p>A108 Adam Street</p>
                   <p>New York, NY 535022</p>
                 </div>
@@ -27,7 +28,7 @@ const Contact = () => {
               <div class="col-md-6">
                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                   <i class="bi bi-telephone"></i>
-                  <h3>Call Us</h3>
+                  <h3>Téléphone</h3>
                   <p>+1 5589 55488 55</p>
                   <p>+1 6678 254445 41</p>
                 </div>
@@ -36,16 +37,16 @@ const Contact = () => {
               <div class="col-md-6">
                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                   <i class="bi bi-envelope"></i>
-                  <h3>Email Us</h3>
-                  <p>info@example.com</p>
-                  <p>contact@example.com</p>
+                  <h3>Email</h3>
+                  <p>niainachristopher4@gmail.com</p>
+                  <p>suppor@correctorpro.com</p>
                 </div>
               </div>
 
               <div class="col-md-6">
                 <div class="info-item" data-aos="fade" data-aos-delay="500">
                   <i class="bi bi-clock"></i>
-                  <h3>Open Hours</h3>
+                  <h3>Open Support</h3>
                   <p>Monday - Friday</p>
                   <p>9:00AM - 05:00PM</p>
                 </div>
@@ -67,7 +68,7 @@ const Contact = () => {
                     type="text"
                     name="name"
                     class="form-control"
-                    placeholder="Your Name"
+                    placeholder="Nom"
                     required
                   />
                 </div>
@@ -77,7 +78,7 @@ const Contact = () => {
                     type="email"
                     class="form-control"
                     name="email"
-                    placeholder="Your Email"
+                    placeholder="Email"
                     required
                   />
                 </div>
@@ -87,7 +88,7 @@ const Contact = () => {
                     type="text"
                     class="form-control"
                     name="subject"
-                    placeholder="Subject"
+                    placeholder="Sujet"
                     required
                   />
                 </div>
@@ -109,7 +110,7 @@ const Contact = () => {
                     Your message has been sent. Thank you!
                   </div>
 
-                  <button type="submit">Send Message</button>
+                  <button type="submit">Envoyer</button>
                 </div>
               </div>
             </form>

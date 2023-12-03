@@ -11,51 +11,48 @@ const Stats = () => {
         data-aos-delay="100"
       >
         <div class="row gy-4">
-          <div class="col-lg-3 col-md-6">
-            <div class="stats-item text-center w-100 h-100">
-              <span
-                data-purecounter-start="0"
-                data-purecounter-end="232"
-                data-purecounter-duration="1"
-                class="purecounter"
-              ></span>
-              <p>Clients</p>
-            </div>
+          <div class="col-lg-7 col-md-7">
+            <p>
+              Explorez l'ampleur de notre expertise linguistique avec le nombre
+              de données actuellement intégrées dans notre dictionnaire,
+              assurant une correction précise et complète.
+            </p>
           </div>
-
-          <div class="col-lg-3 col-md-6">
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span
                 data-purecounter-start="0"
                 data-purecounter-end="521"
                 data-purecounter-duration="1"
                 class="purecounter"
-              ></span>
-              <p>Projects</p>
+              >2104</span>
+              <p>mots Français</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span
                 data-purecounter-start="0"
                 data-purecounter-end="1453"
                 data-purecounter-duration="1"
                 class="purecounter"
-              ></span>
-              <p>Hours Of Support</p>
+              >2402</span>
+              <p>mots Anglais</p>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-4 col-md-6">
             <div class="stats-item text-center w-100 h-100">
               <span
                 data-purecounter-start="0"
                 data-purecounter-end="32"
                 data-purecounter-duration="1"
                 class="purecounter"
-              ></span>
-              <p>Workers</p>
+              >115</span>
+              <p>mots Malagasy</p>
             </div>
           </div>
         </div>
@@ -63,4 +60,4 @@ const Stats = () => {
     </section>
   );
 };
-export default Stats
+export default Stats;
