@@ -1,5 +1,5 @@
 # CorrectorPro
-### Prod link: https://corrector-pro.netlify.app
+### Prod link: http:/173.249.22.169:3006
 ### API link: http:/173.249.22.169:9002/api/corrector
 
 ## Installation
