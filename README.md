@@ -16,6 +16,7 @@
     npm install 
     npm run migrate
     npm run generate
+    npm run seed
     npm run dev
 ``` 
 - Go to the client dierctories and run ``` npm install ``` then run ``` npm start ```
@@ -28,6 +29,7 @@
     npm install 
     npm run migrate
     npm run generate
+    npm run seed
 ```
 - Go inside src folder then run in pm2 ``` pm2 start main.ts ```
 - Publish the client in netlify

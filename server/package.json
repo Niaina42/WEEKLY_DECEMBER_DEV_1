@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx ts-node src/main.ts",
+    "start": "tsc && node ./dist/src/main.js",
+    "pm2": "tsc && pm2 start pm2.config.js",
     "dev": "nodemon --watch src -e js,ts,json, --exec \"npx ts-node src/main.ts\"",
     "migrate": "npx prisma migrate dev",
     "generate": "npx prisma generate",
+    "build": "tsc",
     "seed": "npx prisma db seed"
   },
   "keywords": [],
