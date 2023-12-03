@@ -22,7 +22,7 @@
 - Go to the client dierctories and run ``` npm install ``` then run ``` npm start ```
 
 ### Deploy on server
-- change .env on server directories, remove "localhos" and change to the @IP your server
+- change .env on server directories, remove "localhost" and change to the @IP your server
 - run ``` docker-compose up build ``` for starting the database
 - Go to the server directories and run 
 ``` 
@@ -32,7 +32,7 @@
     npm run seed
 ```
 - Go inside src folder then run in pm2 ``` pm2 start main.ts ```
-- Publish the client in netlify
+- Go to the client dierctories and run ``` pm2 start app.config.json ```
 
 ## More functionalities added
 - Add copy to clip board text
